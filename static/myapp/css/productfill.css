@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.divparent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+.divchild{
+    background-color:  #f2f2f2;
+    height: 95%;
+    width: 70%;
+}
+.divparent .divchild  label{
+
+display: inline-block;
+font-weight: 600;
+margin-bottom: 25px;
+font-size: 2rem;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+margin-left: 20px;
+}
+.divparent .divchild .input1 {
+    display: inline-block;
+    margin-left: 20%;
+    margin-bottom: 10px;
+    width: 60%;
+    height: 5vh;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding-left: 10px;
+
+}
+.divparent .divchild textarea{
+    display: inline-block;
+    margin-left: 20%;
+    margin-bottom: 10px;
+    width: 60%;
+    border-radius: 10px;
+    height: 35px;
+    border: 2px solid #ccc;
+    padding-left: 10px;
+    padding-top: 5px;
+
+
+
+
+}
+.button1{
+    background-color:  #f2f2f2;
+
+ display: flex;
+ justify-content: center;
+}
+.button1 button{
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+    height: 25px;
+    cursor: pointer;
+
+}
+input::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+/* Style for the placeholder text in <textarea> */
+textarea::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+H1{
+    margin-bottom: 15px;
+    text-shadow: 5px 5px  10px black;
+
+}
+
+
+.divparent .divchild .fileinput{
+   display: inline-block;
+   margin-left: 20%;
+   margin-bottom: 10px;
+}

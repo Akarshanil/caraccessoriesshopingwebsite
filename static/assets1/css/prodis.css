@@ -1,0 +1,18 @@
+.img-thumbnail{
+height:30vh;
+ object-fit: contain;   /* adjust streching */
+}
+.one-img{
+background: url(https://images.unsplash.com/photo-1594661907734-7a379b0e1eeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80) no-repeat center;
+background-size: cover;
+}
+.div1{
+  margin-top:10px;
+  margin-bottom:10px;
+
+}
+.div1 h4{
+  margin-bottom:10px;
+   font-family: 'Sunflower', sans-serif;
+
+}

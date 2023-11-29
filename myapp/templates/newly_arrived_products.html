@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- newly_arrived_products.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newly Arrived Products</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Newly Arrived Products</h2>
+    <ul style="list-style-type: square;list-style-position: inside;">
+      {% for product in newly_arrived %}
+        <li >{{ product.procategoryname }} - {{ product.created_date }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+<style>
+    /* Global styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+    background-color:  #f2f2f2;
+}
+li {
+  width: 100%; /* Set the width to 100% of its container */
+  border: 1px solid gray;
+  padding: 5px;
+  margin: 5px 0;
+   transition: all .2s ease-in;
+    cursor: pointer;
+
+}
+li:hover{
+    background-color: #f5f5f5;
+    transform: scale(1.02);
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2), -1px -1px 8px rgba(0,0,0,0.2);
+}
+
+/* Styles for larger screens */
+
+@media screen and (min-width: 768px) {
+  /* Increase font size and adjust padding for larger screens */
+  .container {
+    padding: 40px;
+  }
+}
+
+/* Styles for smaller screens */
+
+@media screen and (max-width: 480px) {
+  /* Decrease font size and adjust padding for smaller screens */
+  .container {
+    padding: 10px;
+  }
+}
+
+</style>
+</body>
+
+</html>

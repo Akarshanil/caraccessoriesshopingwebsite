@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/style.css' %}">
+
+</head>
+<body>
+ <div class="divparent">
+        <h1>EDIT CATEGORY</h1>
+
+        <div class="divchild">
+            <form method="POST"  action="{% url 'categoryeditsave' dataid=keye.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="">Category name:</label><br>
+                <input type="text" placeholder="Enter The Category Name" class="input1" name="categoryname" value="{{keye.categoryname}}"><br>
+                <label >Upload the image:</label><br>
+                <input type="file" class="fileinput" name="image">
+                <img src="{{keye.categoryimage.url}}" class="image">
+                <label>Description:</label><br>
+                <textarea id="" cols="30" rows="10" placeholder="Details"  name="description">{{keye.description}}</textarea><br>
+                <div class="button1">
+                    <button type="submit">save</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+ <style>
+     .image{
+    width: 100%;
+    height: 10vh;
+    object-fit: contain;   /* adjust streching */
+    mix-blend-mode: darken;  /* remove background color */
+    }
+
+
+ </style>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+       {% if messages %}
+      {% for i in messages %}
+           {% if i.tags == 'warning' %}
+               <script>
+                    swal('{{i}}','','warning');
+               </script>
+           {% elif i.tags == 'error' %}
+               <script>
+                    swal('{{i}}','','error');
+               </script>
+           {% else%}
+               <script>
+                    swal('{{i}}','','success');
+               </script>
+           {% endif %}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
+{% endblock %}

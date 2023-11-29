@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp/css/productfill.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<div class="divparent">
+        <h1>EDIT PRODUCT</h1>
+
+
+        <div class="divchild">
+            <form method="POST" action="{% url 'deliveryeditsave' dataid=keye.id %}"   enctype="multipart/form-data" >
+                {% csrf_token %}
+                <label for="">fullname :</label><br>
+                <input type="text" placeholder="Enter The Full Name" class="input1" name="fullname" value="{{keye.fullname}}"><br>
+                <label for="">MobileNumber:</label><br>
+                <input type="text" name="mobilenumber"   class="input1"  min="1"  placeholder="Enter the MobileNumber" value="{{keye.mobilenumber}}"><br>
+                <label >Enter the price:</label><br>
+                <input type="text" placeholder="Enter The landmark" class="input1" name="landmark" value="{{keye.landmark}}"><br>
+                 <label >Enter the twon_or_city:</label><br>
+                <input type="text" placeholder="Enter The twon_or_city" class="input1" name="twon_or_city" value="{{keye.twon_or_city}}"><br>
+                <div class="button1">
+                    <button type="submit">save</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   {% if messages %}
+      {% for i in messages %}
+           {% if i.tags == 'warning' %}
+               <script>
+                    swal('{{i}}','','warning');
+               </script>
+           {% elif i.tags == 'error' %}
+               <script>
+                    swal('{{i}}','','error');
+               </script>
+           {% else%}
+               <script>
+                    swal('{{i}}','','success');
+               </script>
+           {% endif %}
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
+{% endblock %}
